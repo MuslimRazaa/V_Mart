@@ -201,6 +201,14 @@ export default function AddProduct() {
                       <input type="checkbox" />
                     </div>
                   </div>
+                  <div className="grid-add d-grid my-4">
+                    <label className="text-light d-block text-end" htmlFor="">
+                      Promotions Product
+                    </label>
+                    <div className="text-start">
+                      <input type="checkbox" />
+                    </div>
+                  </div>
 
                   <div className="grid-add d-grid my-4">
                     <label className="text-light d-block text-end" htmlFor="">

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import SideBar from "../../../Components/Admin/SideBar";
-import ImgUpload from "../../../Components/Admin/ImgUpload";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,32 +9,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { baseUrl } from "../../../assets/utils/IP";
 import axios from "axios";
-import ImageUploader from "../../../Components/Admin/ImageUploader";
 
 export default function AddBrand() {
   const [brandName, setBrandName] = useState("");
-  const [image, setImage] = useState();
-  const [selectedFile, setSelectedFile] = useState();
-  const [dispplayedImage, setDispplayedImage] = useState();
-
-  // const handleFileChange = (e) => {
-  //   const file = e.target.files[0];
-  //   console.log("File:", file); // Log the file object
-  //   if (file) {
-  //     setSelectedFile(file);
-  //     console.log(selectedFile, "-----image"); // Store the file object in state
-  //   }
-  // };
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [displayedImage, setDisplayedImage] = useState(null);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    console.log("file:", file); // Log the file object
     if (file) {
       setSelectedFile(file);
+
       const reader = new FileReader();
       reader.onloadend = () => {
-        setDispplayedImage(reader.result);
-        // Store the base64 encoded image data in state
+        setDisplayedImage(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -43,35 +30,30 @@ export default function AddBrand() {
 
   const handleSave = async (e) => {
     e.preventDefault();
-    console.log("in handle savaeda s");
-    const FormData = require("form-data");
-    // const fs = require("fs");
-    let data = new FormData();
-    console.log("brandadsa =>>>>", brandName);
-    data.append("brand_name", brandName);
-    data.append("brand_logo", selectedFile);
-    let config = {
-      method: "post",
-      maxBodyLength: Infinity,
-      url: `${baseUrl}/brand-create`,
 
-      data: data,
-    };
+    if (!selectedFile) {
+      // Handle the case where no file is selected
+      console.error("No file selected.");
+      return;
+    }
 
-    await axios
-      .request(config)
-      .then((response) => {
-        console.log(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
+    const formData = new FormData();
+    formData.append("brand_name", brandName);
+    formData.append("brand_logo", selectedFile);
+
+    try {
+      const response = await axios.post(`${baseUrl}/brand-create`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data", // Important for file uploads
+        },
       });
-    setBrandName("");
-    setDispplayedImage();
-  };
 
-  const handleShowFile = () => {
-    alert("your file is selected");
+      console.log(response.data);
+      setBrandName("");
+      setDisplayedImage(null);
+    } catch (error) {
+      console.error("Error uploading image:", error);
+    }
   };
 
   return (
@@ -119,29 +101,30 @@ export default function AddBrand() {
                 </label>
                 <div className="row">
                   <div className="col-lg-4">
-                    <ImageUploader title="Upload Image" />
+                    <input
+                      type="file"
+                      className="image-input"
+                      id="fileInput"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                    />
+                    <label
+                      htmlFor="fileInput"
+                      className="img-plus"
+                      style={{ width: "200px" }}
+                    >
+                      {displayedImage ? (
+                        <img
+                          src={displayedImage}
+                          alt=""
+                          style={{ width: "100%" }}
+                        />
+                      ) : (
+                        <span style={{color:"yellow"}}>+ Click to upload image</span>
+                      )}
+                    </label>
                   </div>
                 </div>
-                {/* <ImgUpload /> */}
-                <input
-                  type="file"
-                  class="image-input"
-                  id="fileInput"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                />
-
-                <span>
-                  <img
-                    class="img-plus"
-                    src={dispplayedImage}
-                    alt=""
-                    onClick={() => {
-                      document.getElementById("fileInput").click();
-                    }}
-                    style={{ width: "200px" }}
-                  />
-                </span>
               </div>
               <div className="grid-add d-grid align-items-center my-4">
                 <label htmlFor=""></label>

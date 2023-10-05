@@ -22,7 +22,7 @@ export default function SubCategories() {
     const getAllCategory = async () => {
       try {
         const res = await axios.get(`${baseUrl}/get-all-category`);
-        console.log(res.data);
+        console.log(res.data, "categorycategorycategorycategory");
         setCategory(res.data);
       } catch (error) {
         console.log(error.message);
@@ -32,7 +32,6 @@ export default function SubCategories() {
   }, []);
   //
   const handleDeleteClick = (catId) => {
-    console.log("cat id =>", catId);
     setDeletedIdProduct(catId);
   };
   const handleDelete = async (id) => {
@@ -109,32 +108,38 @@ export default function SubCategories() {
                   <p>Action</p>
                 </div>
               </div>
-              <div className="categorie-table-box-sec text-light w-100 align-items-center rounded-3 my-2">
-                <div className="categori-name d-flex align-items-center p-3">
-                  <input type="checkbox" />
-                  <p className="mx-3">Cigar</p>
-                </div>
+              {category?.map((category) => (
+                <div
+                  key={category.category_id
+                  }
+                  className="categorie-table-box-sec text-light w-100 align-items-center rounded-3 my-2"
+                >
+                  <div className="categori-name d-flex align-items-center p-3">
+                    <input type="checkbox" />
+                    <p className="mx-3">{category.category_name}</p>
+                  </div>
 
-                <div className="border-end text-end p-3">
-                  <p>6</p>
-                </div>
-                <div className="p-2 px-3 text-end">
-                  <>
+                  <div className="border-end text-end p-3">
+                    <p>{category.product_count
+                    }</p>
+                  </div>
+                  <div className="p-2 px-3 text-end">
                     {/* Button trigger modal */}
                     <button
                       type="button"
                       className="btn bg-yellow"
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
+                      onClick={()=> handleDeleteClick(category.category_id)}
                     >
                       <FontAwesomeIcon color="red" icon={faTrash} />
                     </button>
-                    <Link to="/EditSubCategory" className="btn ms-3 bg-yellow">
+                    <Link to={`/EditSubCategory/${category.category_id}`} className="btn ms-3 bg-yellow">
                       <FontAwesomeIcon icon={faPencil} />
                     </Link>
-                  </>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -162,7 +167,6 @@ export default function SubCategories() {
                 color="red"
                 fontSize="80px"
                 icon={faTrash}
-                // onClick={() => handleDelete(deleteIdProduct)}
               />{" "}
               <h1 className="text-light">
                 You are about to delete this product
@@ -180,8 +184,9 @@ export default function SubCategories() {
                 data-bs-dismiss="modal"
                 type="button"
                 className="btn btn-danger"
+                onClick={() => handleDelete(deleteIdProduct)}
               >
-                Delete Anyway
+                Delete Anyway dsdsd
               </button>
             </div>
           </div>

@@ -88,12 +88,12 @@ export default function SideBar() {
               </li>
             </ul>
           </div>
-          <Link className="logout-btn start-50 position-absolute" to="/">
+          <button className="bg-transparent border-0 logout-btn start-50 position-absolute" onClick={logout}>
             <img src={ShutdownIcon} alt="" />
             <span className="mx-1">
               Logout
             </span>
-          </Link>
+          </button>
         </div>
       </div>
     </div>

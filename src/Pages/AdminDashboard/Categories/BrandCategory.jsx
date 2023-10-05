@@ -11,8 +11,46 @@ import {
   faPlus,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import { baseUrl } from "../../../assets/utils/IP";
 
 export default function BrandCategories() {
+  const [brands, setBrands] = useState()
+  const [deleteIdProduct, setDeletedIdProduct] = useState();
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${baseUrl}/get-all-brands`);
+        console.log(JSON.stringify(response.data));
+        setBrands(response.data)
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData(); // Call the function when the component mounts
+  }, []);
+
+
+  const handleDeleteClick = (catId) => {
+    setDeletedIdProduct(catId);
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      console.log("id =>>>", id);
+      const res = await axios.delete(`${baseUrl}/brand-delete/${id}`);
+      console.log("its deleted response =>>", res.data);
+      setBrands((prevBrand) =>
+      prevBrand.filter((brand) => brand.brand_id !== id)
+    );
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
+
   return (
     <section className="bg-main">
       <SideBar />
@@ -74,54 +112,36 @@ export default function BrandCategories() {
                 </div>
               </div>
 
-              <div className="brand-categorie-table-box-sec text-light w-100 align-items-center rounded-3 my-2">
-                <div className="categori-name d-flex align-items-center p-3">
-                  <input type="checkbox" />
-                  <p className="mx-3">Dunhill</p>
-                </div>
+              {brands?.map((brand) => (
+        <div
+          key={brand.brand_id}
+          className="brand-categorie-table-box-sec text-light w-100 align-items-center rounded-3 my-2"
+        >
+          <div className="categori-name d-flex align-items-center p-3">
+            <input type="checkbox" />
+            <p className="mx-3">{brand.brand_name}</p>
+          </div>
 
-                <div className="border-end text-end p-3">
-                  <p>6</p>
-                </div>
-                <div className="p-2 px-3 text-end">
-                  {/* Button trigger modal */}
-                  <button
-                    type="button"
-                    className="btn bg-yellow me-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <FontAwesomeIcon color="red" icon={faTrash} />
-                  </button>
-                  <Link to="/EditBrand" className="btn bg-yellow">
-                    <FontAwesomeIcon icon={faPencil} />
-                  </Link>
-                </div>
-              </div>
-              <div className="brand-categorie-table-box-sec text-light w-100 align-items-center rounded-3 my-2">
-                <div className="categori-name d-flex align-items-center p-3">
-                  <input type="checkbox" />
-                  <p className="mx-3">Cigar</p>
-                </div>
-
-                <div className="border-end text-end p-3">
-                  <p>6</p>
-                </div>
-                <div className="p-2 px-3 text-end">
-                  {/* Button trigger modal */}
-                  <button
-                    type="button"
-                    className="btn bg-yellow me-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    <FontAwesomeIcon color="red" icon={faTrash} />
-                  </button>
-                  <Link to="/EditBrand" className="btn bg-yellow">
-                    <FontAwesomeIcon icon={faPencil} />
-                  </Link>
-                </div>
-              </div>
+          <div className="border-end text-end p-3">
+            <p>{brand.product_count}</p>
+          </div>
+          <div className="p-2 px-3 text-end">
+            {/* Button trigger modal */}
+            <button
+              type="button"
+              className="btn bg-yellow me-2"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              onClick={() => handleDeleteClick(brand.brand_id)}
+            >
+              <FontAwesomeIcon color="red" icon={faTrash} />
+            </button>
+            <Link to={`/EditBrand/${brand.brand_id}`} className="btn bg-yellow">
+              <FontAwesomeIcon icon={faPencil} />
+            </Link>
+          </div>
+        </div>
+      ))}
             </div>
           </div>
         </div>
@@ -162,6 +182,7 @@ export default function BrandCategories() {
                 type="button"
                 className="btn btn-danger"
                 data-bs-dismiss="modal"
+                onClick={()=> handleDelete(deleteIdProduct)}
               >
                 Delete Anyway
               </button>

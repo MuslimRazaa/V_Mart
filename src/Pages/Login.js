@@ -6,19 +6,19 @@ import { Link, useNavigate } from "react-router-dom";
 import buyleftspan from "../assets/images/buyleftspan.png";
 import buyrightspan from "../assets/images/buyrightspan.png";
 import flower from "../assets/images/flowercontact.png";
-//import axios from "axios";
-//import { useState } from "react";
-//import { baseUrl } from "../assets/utils/IP";
+import axios from "axios";
+import { useState } from "react";
+import { baseUrl } from "../assets/utils/IP";
 
 function Login() {
   const Swal = require("sweetalert2");
 
   const navigate = useNavigate();
-  //const [singinloader, setsinginloader] = useState(false)
-  // const [user, setUser] = useState({
-  //   email: "",
-  //   password: "",
-  // });
+  const [singinloader, setsinginloader] = useState(false)
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
 
   useEffect(() => {
     const token = localStorage.getItem("root");
@@ -39,89 +39,80 @@ function Login() {
   let handleSubmit = async (e) => {
     e.preventDefault();
 
-// JUST FOR FRONTEND PURPOSE. REMOVE THIS WHEN DOING INTEGRATION
-navigate("/UserDashboard");
+    setsinginloader(true)
 
+    try {
+      const email = user.email;
+      const password = user.password;
 
+      if (!email || !password) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Kindly fill all the fields",
+        });
+        return; // Stop execution if fields are missing
+      }
 
+      const res = await axios.post(`${baseUrl}/login`, {
+        email,
+        password,
+      });
 
-    //setsinginloader(true)
+      console.log(res);
 
-    // try {
-    //   const email = user.email;
-    //   const password = user.password;
+      if (res && res.status === 200) {
+        const accessToken = res.data.token;
 
-    //   if (!email || !password) {
-    //     Swal.fire({
-    //       icon: "error",
-    //       title: "Oops...",
-    //       text: "Kindly fill all the fields",
-    //     });
-    //     return; // Stop execution if fields are missing
-    //   }
+        localStorage.setItem("root", accessToken);
 
-    //   const res = await axios.post(`${baseUrl}/login`, {
-    //     email,
-    //     password,
-    //   });
+        const token = accessToken.split(".");
 
-    //   console.log(res);
+        const details = atob(token[1]);
 
-    //   if (res && res.status === 200) {
-    //     const accessToken = res.data.token;
+        const isAdmin = JSON.parse(details);
 
-    //     localStorage.setItem("root", accessToken);
+        localStorage.setItem(
+          "current",
+          JSON.stringify({
+            value: isAdmin.userId,
+            value2: isAdmin.isAdmin,
+          })
+        );
 
-    //     const token = accessToken.split(".");
+        console.log(isAdmin);
 
-    //     const details = atob(token[1]);
+        Swal.fire({
+          icon: "success",
+          title: "Login Successful",
+        });
 
-    //     const isAdmin = JSON.parse(details);
+        if (isAdmin.isAdmin) {
+          navigate("/DashboardAdmin");
+        } else {
+          navigate("/UserDashboard");
+        }
+      }
+    } catch (err) {
+      if (err.response && err.response.status === 401) {
+        console.log("Error!")
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Invalid credentials",
+        });
+      } else {
 
-    //     localStorage.setItem(
-    //       "current",
-    //       JSON.stringify({
-    //         value: isAdmin.userId,
-    //         value2: isAdmin.isAdmin,
-    //       })
-    //     );
-
-    //     console.log(isAdmin);
-
-    //     Swal.fire({
-    //       icon: "success",
-    //       title: "Login Successful",
-    //     });
-
-    //     if (isAdmin.isAdmin) {
-    //       navigate("/DashboardAdmin");
-    //     } else {
-    //       navigate("/UserDashboard");
-    //     }
-    //   }
-    // } catch (err) {
-    //   if (err.response && err.response.status === 401) {
-    //     console.log("Error!")
-    //     Swal.fire({
-    //       icon: "error",
-    //       title: "Oops...",
-    //       text: "Invalid credentials",
-    //     });
-    //   } else {
-
-    //     setTimeout(() => {
-    //       //setsinginloader(false)
-    //       Swal.fire({
-    //         icon: "warning",
-    //         title: "Server Error!",
-    //         text: "We are facing some issue connecting to server. Please try again",
-    //       });
-    //     }, 3000);
-
-
-
-    //   }
-    // }
+        setTimeout(() => {
+          //setsinginloader(false)
+          Swal.fire({
+            icon: "warning",
+            title: "Server Error!",
+            text: "We are facing some issue connecting to server. Please try again",
+          });
+        }, 3000);
+      }
+    }
   };
 
   return (
@@ -160,13 +151,13 @@ navigate("/UserDashboard");
                       //required
                       name="email"
                       placeholder="Email Address"
-                      //value={user.email}
-                      // onChange={(e) => {
-                      //   setUser({
-                      //     ...user,
-                      //     email: e.target.value.toLowerCase(),
-                      //   });
-                      // }}
+                      value={user.email}
+                      onChange={(e) => {
+                        setUser({
+                          ...user,
+                          email: e.target.value.toLowerCase(),
+                        });
+                      }}
                     />
                   </div>
                   <div className="col-lg-12">
@@ -176,10 +167,10 @@ navigate("/UserDashboard");
                       className="border mb-2 poppins"
                       //required
                       placeholder="Password"
-                      //value={user.password}
-                      // onChange={(e) => {
-                      //   setUser({ ...user, password: e.target.value });
-                      // }}
+                      value={user.password}
+                      onChange={(e) => {
+                        setUser({ ...user, password: e.target.value });
+                      }}
                     />
                     <Link
                       to="/forgot-password"
@@ -191,7 +182,6 @@ navigate("/UserDashboard");
                     <div className="cont">
                       <div class="signinbtn d-flex flex-wrap justify-content-center">
                         <button className="text-uppercase mx-4 border-0 w-auto" type="submit">
-
                           Sign In
                         </button>
 

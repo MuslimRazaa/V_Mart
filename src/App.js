@@ -134,7 +134,7 @@ function App() {
           <Route path="/AdminProduct" element={<AdminProduct />} />
           <Route path="/AddProduct" element={<AddProduct />} />
           <Route path="/ThisWeekPromotion" element={<ThisWeekPromotion />} />
-          <Route path="/EditSubCategory" element={<EditSubCategories />} />
+          <Route path="/EditSubCategory/:id" element={<EditSubCategories />} />
           <Route
             path="/AddThisWeekPromotion"
             element={<AddThisWeekPromotion />}
@@ -146,7 +146,7 @@ function App() {
           <Route path="/SalesView" element={<SalesView />} />
           <Route path="/ManageReviews" element={<ManageReviews />} />
           <Route path="/ReviewsEdit" element={<ReviewsEdit />} />
-          <Route path="/EditBrand" element={<EditBrand />} />
+          <Route path="/EditBrand/:id" element={<EditBrand />} />
           <Route path="/Reports" element={<Reports />} />
           <Route path="/EditProduct" element={<EditProduct />} />
           <Route

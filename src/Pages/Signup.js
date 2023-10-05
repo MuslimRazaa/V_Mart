@@ -59,6 +59,7 @@ function Signup() {
   const handlePassport = (value) => {
     if (value.length < 15) {
       regex = new RegExp("^[a-zA-Z0-9]+$");
+      // regex = new RegExp("^[0-9]*$");
 
       if (regex.test(value)) {
         setUser({ ...user, passportNumber: value });
@@ -125,6 +126,8 @@ function Signup() {
 
   const validatePassport = () => {
     regex = new RegExp("^[a-zA-Z0-9]+$");
+    // regex = new RegExp("^[0-9]*$");
+
 
     return regex.test(user.passportNumber);
   };
@@ -448,8 +451,8 @@ function Signup() {
                         </span>
                       </p>
                       <div class="signinbtn ">
-                        {/* <Link onClick={handleSubmit}>Continue</Link> */}
-                        <Link to="/shipping-cart">Continue</Link>
+                        <Link onClick={handleSubmit}>Continue</Link>
+                        {/* <Link to="/shipping-cart">Continue</Link> */}
                       </div>
                     </div>
                   </div>

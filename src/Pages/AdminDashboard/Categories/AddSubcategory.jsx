@@ -34,17 +34,18 @@ export default function AddSubCategories() {
     getSubBrand();
   }, []);
 
-  console.log(
-    "All form data===>",
 
-    selectedBrand,
-    subcategoryName,
-    metaTagTitle,
-    metaTagDescription1,
-    metaTagDescription2
-  );
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(
+      "All form data===>",
+  
+      selectedBrand,
+      subcategoryName,
+      metaTagTitle,
+      metaTagDescription1,
+      metaTagDescription2
+    );
     try {
       const formData = {
         brand_id: brandID,
