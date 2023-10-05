@@ -1,0 +1,706 @@
+@media only screen and (max-width: 1800px) {
+    .container-1640 {
+        max-width: 1570px;
+    }
+    .per-off {
+        left: 175px;
+    }
+    .filter-mean .proslider>img {
+  
+        left: 6px;
+
+    }
+    .togglebtn input:checked+label textarea#add {
+        width: 480px;
+    }
+    section.bannersec img {
+        width: 100%;
+    }
+    section.bannersec h1 {
+        font-size: 110px;
+    }
+    
+    section.bannersec h4 {
+        font-size: 46px;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .container-1640 {
+        max-width: 1570px;
+    }
+    h1.title-mean {
+        font-size: 42px;
+    }
+    section.bannersec h1 {
+        font-size: 60px;
+        line-height: 50px;
+    }
+    section.secshop .toplinecon {
+        padding-top: 30px;
+    }
+    .row.show-pro  .col-lg-4 img {
+        width: 90%;
+        z-index: 99999999;
+        position: relative;
+    }
+
+    
+    section.bannersec.brandnamepages h1.title-mean {
+        margin-bottom: 80px;
+    }
+    h1.carttitle {
+        font-size: 17px;
+    }
+    .thankyou p {
+        font-size: 20px;
+    }
+    
+    .note p {
+        font-size: 20px;
+    }
+    .iconsheader {
+        gap: 17px;
+    }
+    
+    .iconsheader i {
+        font-size: 18px;
+    }
+    .prodetailcart h4 {
+        font-size: 28px;
+    }
+    
+    .prodetailcart p {
+        font-size: 30px;
+    }
+    
+    .cartdiscription {
+        padding: 10px 30px;
+    }
+    
+    .subtotal h6 {
+        font-size: 23px;
+    }
+    
+    .subtotal p {
+        font-size: 30px;
+    }
+    .fade.accountcreated.continuemodl.modal.show .signinbtn {
+        transform: translate(70px, 20px);
+    }
+    
+    .fade.accountcreated.continuemodl.modal.show .signinbtn a {
+        font-size: 16px !important;
+        width: 141px;
+        height: 37px;
+    }
+    section.bannersec h1 {
+        font-size: 90px;
+    }
+    .social-icons {
+        width: 99% !important;
+        gap: 20px;
+    }
+    section.bannersec.aboutus p {
+        font-size: 20px;
+    }
+    .Refundpolicy ul li a {
+        font-size: 15px;
+    }
+    .col-lg-5.info-bg {
+        left: 10px;
+    }
+    
+    section.sec-5 .row {
+        padding: 70px 0;
+    }
+    .container-1640 {
+        max-width: 86vw;
+    }
+
+    .logo img {
+        width: 70%;
+    }
+
+    header.sticky {
+        top: 92px;
+    }
+    .per-off {
+        left: 90px;
+    }
+
+    .Refundpolicy ul li a {
+        font-size: 15px;
+    }
+
+    .container-1640 {
+        max-width: 86vw;
+    }
+
+    header.sticky {
+        top: 92px;
+    }
+
+    .feedcont a {
+        font-size: 27px;
+        width: 46px;
+        padding: 0;
+        height: 140px;
+    }
+
+    .feedcont {
+        right: -23px;
+    }
+    .mission p {
+        font-size: 20px;
+    }
+    
+    .mission>img {
+        width: 15%;
+        padding: 7px 0;
+    }
+    
+    
+    section.miss-goal {
+        padding-bottom: 50px;
+    }
+    .mission h2 {
+        font-size: 54px;
+        margin: 30px 0;
+    }
+    
+    .mission {
+        padding-bottom: 20px;
+    }
+    .row.youmealso .col-lg-3.pr2 .proslider>img {
+        width: 160px;
+        height: 100%;
+    }
+    
+    
+    
+    .row.youmealso .col-lg-3.pr3  .proslider>img {
+        width: 170px;
+        height: 80%;
+    }
+    
+    .row.youmealso .col-lg-3.pr6  .proslider>img {
+        width: 200px;
+    }
+    .discript p {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+    .cohib-add a p {
+        font-size: 17px;
+    }
+    
+    .proprice p {
+        font-size: 15px;
+    }
+    .addtocart {
+        padding-top: 0px;
+    }
+    span.modallogo img {
+        width: 70%;
+    }
+    
+    .managerating h2 {
+        font-size: 36px;
+    }
+    
+    .cohibinput textarea {
+        height: 180px;
+    }
+    
+    .cohibeproduct .modal-body {
+        padding: 20px 60px;
+    }
+    .fade.Feedbackmodal.modal.show .modal-dialog {
+        max-width: 50%;
+    }
+
+
+    .filter-mean .col-lg-4.pro1 .proslider>img {
+        width: 120px;
+        height: 100%;
+        left: -10px;
+    }
+    
+    .filter-mean .col-lg-4.pro2 .proslider>img {
+        width: 140px;
+        height: 100%;
+        left: 0px;
+    }
+    .per-off {
+        left: 129px;
+    }
+    .filter-mean .col-lg-4.pro3 .proslider>img {
+        width: 140px;
+        height: 100%;
+        left: 0px;
+    }
+    section.secshop .col-lg-4.pro6 .proslider.lgihter12>img {
+        left: 16px;
+    }
+
+    .filter-mean .col-lg-4.pro7 .proslider>img ,.filter-mean .col-lg-4.pro8 .proslider>img , .filter-mean .col-lg-4.pro9 .proslider>img {
+        width: 155px;
+        left: 10px;
+    }
+    .filter-mean .procontent {
+        width: 242.86px;
+
+    }
+    .filter-mean .col-lg-4.pro10  .proslider>img {
+        left: -24px;
+        width: 235px;
+    }
+    .filter-mean .col-lg-4.pro11 .proslider>img {
+        left: -14px;
+        width: 231px;
+    }
+    .filter-mean .col-lg-4.pro12 .proslider>img {
+        left: -15px;
+        width: 205px;
+    }
+    section.secshop .proslider span img {
+        width: 100%;
+    }
+    .smoke-section-parent {
+        top: 33%;
+    }
+
+
+.subtotalbtn.shipbtn a {
+    font-size: 16px !important;
+    padding: 7px 13px !important;
+}
+
+section.shippingsection.pay .subtotalbtn.shipbtn {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.togglebtn input:checked+label textarea#add {
+    width: 400px;
+}
+}
+
+
+@media only screen and (max-width: 1440px) {
+    .col-lg-7.m-auto.cont-detail {
+        padding: 0 120px;
+    }
+    .restriction h1{
+        font-size: 50px;
+    }
+    .row.show-pro .col-lg-4 img {
+        width: 80%;
+    }
+    .row.show-pro .col-lg-4 {
+       text-align: center;
+    }
+    .restriction p{
+        font-size: 25px;
+    }
+    section.bannersec.brandnamepages h1.title-mean {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+    section.completeordersec {
+        padding: 0px 90px 90px 90px;
+        margin-bottom: 90px;
+    }
+    .Account-my ul li a {
+        font-size: 16px;
+    }
+    .thankyou .row .col-lg-6 div {
+        height: 370px;
+    }
+    li.Promotion-active a:hover img {
+        width: 200px;
+    }
+    .menusheader ul {
+
+        gap: 50px;
+    }
+    .thankyou p {
+        font-size: 17px;
+    }
+    
+    .note p {
+        font-size: 18px;
+    }
+    
+    .subtotal p {
+        font-size: 25px;
+    }
+    
+    .wishes p {
+        font-size: 20px;
+    }
+    
+    .wishes p a {
+        font-size: 19px;
+    }
+    section.bannersec h4 {
+        font-size: 40px;
+    }
+    .billingaddress div label {
+        font-size: 14px;
+    }
+    .togglebtn input:checked+label textarea#add {
+        width: 340px;
+    }
+    .currency a {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+    .star-rating__star {
+        font-size: 1em;
+    }
+    .mission p {
+        font-size: 17px;
+    }
+.Refundpolicy {
+    padding: 6px 60px;
+}
+
+.Refundpolicy ul li a {
+    font-size: 13px;
+}
+header.sticky {
+    top: 74px;
+}
+.warning {
+    padding: 6px 60px;
+}
+
+.warning p {
+    font-size: 18px;
+}
+
+.menusheader ul li a {
+    font-size: 16px;
+}
+
+.menusheader ul li a {
+    font-size: 16px;
+}
+.opentiming p {
+    font-size: 9px;
+}
+.container-1640 {
+    max-width: 90vw;
+}
+.fade.Feedbackmodal.modal.show .modal-title.h4 h1 {
+    font-size: 44px;
+}
+
+.fade.Feedbackmodal.modal.show .modal-title.h4 p {
+    font-size: 16px;
+}
+
+.fade.Feedbackmodal.Contactmodal.modal.show label {
+    font-size: 25px;
+}
+
+.fade.Feedbackmodal.Contactmodal.modal.show input {
+    height: 38px;
+}
+
+.fade.Feedbackmodal.Contactmodal.modal.show .modal-body {
+    margin-bottom: 0px;
+}
+.logo img {
+    width: 63%;
+}
+
+.hoverul span {}
+
+.hoverul span img:last-child {
+    width: 80%;
+}
+
+.hoverul {
+    padding: 30px 60px;
+    gap: 50px;
+    margin-top: 20px;
+}
+.footer-social h4 {
+    font-size: 28px;
+}
+
+.footer-social ul li a {
+    font-size: 18px;
+}
+
+.footer-social ul li {
+    margin-bottom: 10px;
+}
+
+.footer-contact h4 {
+    font-size: 40px;
+}
+
+.ul-fo li a {
+    font-size: 18px;
+}
+
+.warning.copyright p {
+    font-size: 19px;
+}
+.info span a {
+    font-size: 18px;
+}
+
+.flex-box-cust {
+    margin-bottom: 41px;
+}
+
+.flex-box-cust span i {
+    font-size: 20px;
+}
+
+.social-icons a img {
+    width: 35px;
+}
+
+section.sec-5 input {
+    margin-bottom: 21px;
+    height: 43px;
+}
+
+.col-lg-5.info-bg {
+    left: 9px;
+}
+section.bannersec h1 {
+    font-size: 70px;
+}
+.proprice p {
+    line-height: 25px;
+}
+.abdesttitle h2 {
+    font-size: 25px;
+}
+.progres-num-and-star {
+    width: 17%;
+}
+.recomm-rev-box-two span {
+    font-size: 12px;
+}
+
+.rv-two-m-para p {
+    font-size: 13px;
+}
+
+.well-head-rv-two h3 {
+    font-size: 16px;
+}
+
+.rv-two-left-box-head span {
+    font-size: 16px;
+}
+.row.youmealso .col-lg-3.pr1 .proslider>img {
+    width: 120px;
+    height: 100%;
+}
+
+.row.youmealso .procontent {
+    padding-left: 62px;
+    width: 85%;
+}
+.row.youmealso .col-lg-3.pr3 .proslider>img {
+    width: 130px;
+    height: 60%;
+    left: 60px;
+}
+
+
+.row.youmealso .col-lg-3.pr4 .proslider>img {
+    width: 134px;
+    left: 60px;
+}
+
+
+.row.youmealso .col-lg-3.pr6 .proslider>img {
+    height: 190px;
+    width: 163px;
+}
+
+.row.youmealso .col-lg-3.pr7  .proslider>img {
+    width: 150px;
+}
+.row.youmealso .col-lg-3.pr2 .proslider>img {
+    width: 130px;
+    height: 100%;
+    left: 60px;
+}
+.filter-mean .procontent {
+    width: 222.86px;
+    height: 330px;
+}
+.filter-mean .col-lg-4.pro2 .proslider>img {
+    width: 125px;
+
+}
+section.secshop  .container-1640 {
+    max-width: 85vw;
+}
+.filter-mean {
+    gap: 20px;
+}
+
+.filters {
+    width: 250px;
+}
+
+.brandtitle {
+    width: 250px;
+}
+.categories.salespage .categoriesitem:nth-child(3) img {
+    width: 100%;
+}
+
+.categories.salespage .categoriesitem {
+    margin-bottom: 30px;
+}
+.toplinecon {
+    padding-top: 20px;
+}
+.filter-mean .col-lg-4.pro3 .proslider>img {
+    width: 120px;
+}
+.procontent p {
+    font-size: 11px;
+}
+
+.filter-mean .procontent a {
+    margin-top: 19px;
+    transform: translateX(-38px);
+    width: 73px;
+    font-size: 13px;
+
+    height: 30px;
+}
+.procontent h6 {
+    font-size: 21px;
+    color: white;
+}
+
+.filter-mean .col-lg-4.pro4 .proslider>img {
+    left: 6px;
+    width: 140px;
+}
+.filter-mean .col-lg-4.pro5 .proslider>img {
+    left: 6px;
+    width: 133px;
+}
+section.secshop .col-lg-4.pro6 .proslider.lgihter12>img {
+    left: 16px;
+    height: 100%;
+}
+.per-off {
+    left: 94px;
+}
+.filter-mean .col-lg-4.pro7 .proslider>img, .filter-mean .col-lg-4.pro8 .proslider>img, .filter-mean .col-lg-4.pro9 .proslider>img {
+    width: 135px;
+    left: -10px;
+}
+.filter-mean .col-lg-4.pro10 .proslider>img {
+    left: -43px;
+    width: 205px;
+}
+.filter-mean .col-lg-4.pro11 .proslider>img {
+    left: -14px;
+    width: 181px;
+}
+.per-off a {
+    font-size: 23px !important;
+    height: 50px !important;
+}
+.fade.accountcreated.continuemodl.modal.show .signinbtn a {
+    font-size: 15px !important;
+    width: 130px;
+    height: 33px;
+}
+.fade.accountcreated.continuemodl.modal.show .modal-body h2 {
+    font-size: 15px;
+}
+
+.fade.accountcreated.continuemodl.modal.show .modal-body p {
+    font-size: 21px;
+}
+.info h2 {
+    font-size: 36px;
+    color: white;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
+
+section.sec-5 .row {
+    padding: 30px 0;
+}
+
+.discript p {
+    font-size: 16px;
+}
+
+.discript h4 {
+    font-size: 20px;
+}
+
+.frequently h2 {
+    font-size: 25px;
+}
+
+.progess-bar-parensupper {
+    padding: 2rem 0;
+}
+
+.reviews-heading h3 {
+    font-size: 20px;
+    padding-bottom: 13px;
+}
+
+.btn-filt-pr button, .write-modal-button button {
+    font-size: 15px;
+}
+
+.righttpro a {
+    font-size: 15px;
+}
+
+.righttpro p {
+    font-size: 16px;
+}
+
+
+
+.star-parent-top i {
+    font-size: 18px;
+}
+
+.rate-pr-head-two {
+    font-size: 16px;
+}
+
+.rate-pr-head-one {
+    font-size: 21px;
+}
+.row.youmealso .col-lg-3.pr8  .proslider > img {
+    width: 130px;
+    left: 63px;
+}
+.feedcont a {
+    font-size: 23px;
+    width: 40px;
+    padding: 0;
+    height: 130px;
+}
+
+}
+
